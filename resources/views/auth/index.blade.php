@@ -20,24 +20,21 @@
                                     @csrf
                                     <div class="mb-3">
                                         <label for="username">Tên tài khoản</label>
-                                        <input type="text" class="form-control" id="username" name="username"
-                                            placeholder="Enter username" value="root">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Nhập vào tên đăng nhập" value="">
                                     </div>
                                     <div class="mb-3">
                                         <label for="userpassword">Mật khẩu</label>
-                                        <input type="password" class="form-control" id="userpassword" name="password"
-                                            placeholder="Enter password" value="root">
+                                        <input type="password" class="form-control" id="userpassword" name="password" placeholder="Nhập vào mật khẩu" value="">
                                     </div>
                                     <div class="mb-3 row mt-4">
                                         <div class="col-6">
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" name="remember" value="" id="remember-login">
-                                                <label class="form-check-label" for="remember-login">Nhớ đăng nhập
-                                                </label>
+                                                <label class="form-check-label" for="remember-login">Nhớ đăng nhập</label>
                                             </div>
                                         </div>
                                         <div class="col-6 text-end">
-                                            <button class="btn btn-primary w-md waves-effect waves-light" id="sunmit-login" type="submit">Đăng nhập</button>
+                                            <button class="btn btn-primary w-md waves-effect waves-light" id="sunmit-login">Đăng nhập</button>
                                         </div>
                                     </div>
 
@@ -66,6 +63,30 @@
 
 @section('scripts')
 <script>
-    $(document).ready(function(){});
+    $(document).ready(function(){
+        $('#sunmit-login').off().on('click', function(e) {
+            e.preventDefault();
+            var isError = false;
+            var username = $('#username').val();
+            var password = $('#userpassword').val();
+
+            if(username == '') {
+                toastr.warning('Vui lòng nhập tên đăng nhập');
+                isError = true;
+                return 0;
+            }
+
+            if(password == '') {
+                toastr.warning('Vui lòng nhập mật khẩu');
+                isError = true;
+                return 0;
+            }
+
+            if(isError == false) {
+                $('#form-login').submit();
+            }
+        });
+
+    });
 </script>
 @stop

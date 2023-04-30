@@ -13,7 +13,6 @@
 
     <script>
         $(document).ready(function(){
-            console.log('$("#error")', $("#error"));
             toastr.options = {
                 "closeButton": true,
                 "debug": false,

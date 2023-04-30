@@ -64,7 +64,8 @@ class AuthController extends Controller
                     'message_title' => "Thất bại",
                 ], 400);
             }
-            $login = Auth::attempt(['username' => $input['username'], 'password' => $input['password']],true);
+            $rememberMe = $req->has('remember') ? true : false;
+            $login = Auth::attempt(['username' => $input['username'], 'password' => $input['password']], $rememberMe);
             if(!$login) {
                 return response()->json([
                     'success' => false,

@@ -32,3 +32,8 @@ Route::group([
     Route::get('/stores/delete', 'StoreController@storeDelete');
     Route::get('/product/delete', 'ProductController@productDelete');
 });
+
+Route::fallback(function() {
+    $previousPage = url()->previous();
+    return view('layouts.404-page', compact('previousPage'));
+});
