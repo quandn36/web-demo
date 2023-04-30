@@ -78,7 +78,7 @@
                     <select class="form-control" id="store-id">
                         @if(isset($stores) && count($stores))
                         @foreach ($stores as $index => $store)
-                        <option value="{{isset($store->id) ? $store->id : ''}}" <?php ($index == 0) ? 'selected' : '' ?>>{{isset($store->name) ? $store->name : ''}}</option>
+                        <option value="{{isset($store->store_id) ? $store->store_id : ''}}" <?php ($index == 0) ? 'selected' : '' ?>>{{isset($store->name) ? $store->name : ''}}</option>
                         @endforeach
                         @endif
                     </select>
@@ -129,7 +129,7 @@
                         <option value="" selected>Vui lòng chọn</option>
                         @if(isset($stores) && count($stores))
                         @foreach ($stores as $index => $store)
-                        <option value="{{isset($store->id) ? $store->id : ''}}">{{isset($store->name) ? $store->name : ''}}</option>
+                        <option value="{{isset($store->store_id) ? $store->store_id : ''}}">{{isset($store->name) ? $store->name : ''}}</option>
                         @endforeach
                         @endif
                     </select>
