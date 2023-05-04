@@ -20,11 +20,11 @@
                                     @csrf
                                     <div class="mb-3">
                                         <label for="username">Tên tài khoản</label>
-                                        <input type="text" class="form-control" id="username" name="username" placeholder="Nhập vào tên đăng nhập" value="">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Nhập vào tên đăng nhập" value="root">
                                     </div>
                                     <div class="mb-3">
                                         <label for="userpassword">Mật khẩu</label>
-                                        <input type="password" class="form-control" id="userpassword" name="password" placeholder="Nhập vào mật khẩu" value="">
+                                        <input type="password" class="form-control" id="userpassword" name="password" placeholder="Nhập vào mật khẩu" value="root">
                                     </div>
                                     <div class="mb-3 row mt-4">
                                         <div class="col-6">
